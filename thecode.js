@@ -72,6 +72,7 @@ function main() {
 		}
 	}
 	function getPeriod() {
+		console.log(secondselapsed);
 		if (secondselapsed < 3000) {
 			document.getElementById("current-class").innerHTML = "Period 1";
 		}
@@ -117,10 +118,10 @@ function main() {
 		if (secondselapsed > 20400 && secondselapsed < 23100) {
 			document.getElementById("current-class").innerHTML = "Period 8 (Exploratory)";
 		}
-		if (secondselapsed > 23100 && secondselapsed < 22200) {
+		if (secondselapsed > 23100 && secondselapsed < 23400) {
 			document.getElementById("current-class").innerHTML = "Passing Period";
 		}
-		if (secondselapsed > 22201 + 300 && secondselapsed < 24900 + 300) {
+		if (secondselapsed > 23400 && secondselapsed < 26100) {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
 		}
 	}
@@ -170,11 +171,11 @@ function main() {
 		if (secondselapsed > 20400 && secondselapsed < 23100) {
 			return 23100 - secondselapsed; //period 8
 		}
-		if (secondselapsed > 23100 && secondselapsed < 22200) {
-			return 22200 - secondselapsed; //passing period
+		if (secondselapsed > 23100 && secondselapsed < 23400) {
+			return 23400 - secondselapsed; //passing period
 		}
-		if (secondselapsed > 22201 + 300 && secondselapsed < 24900 + 300) {
-			return 24900 + 300 - secondselapsed; //period 9
+		if (secondselapsed > 23400 && secondselapsed < 26100) {
+			return 26100 - secondselapsed; //period 9
 		}
 	}
 	function setTimeLeftInPeriod() {
