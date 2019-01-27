@@ -15,6 +15,14 @@
 			}});
 		</script>
 	</script>
+	<script>
+		document.addEventListener("keydown", function(e) {
+			if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+				e.preventDefault();
+				alert('Source code is protected');
+			}
+		}, false);
+	</script>
 	<title>
 		thetitanteam.com - Info about your school day
 	</title>
