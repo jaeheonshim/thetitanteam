@@ -3,7 +3,17 @@
 <head>
 	<note: school day is 7 hours 15 minutes>
 		<script src="thecode.js">
-
+	<script src="https://unpkg.com/jdetects@0.1.0/jdetects.js"></script>
+	<script>
+		jdetects.create({
+	once: false,
+	label: "jaeheonshim",
+	onchange: function(status) {
+		if(status == "on") {
+			document.write("Developer tools is not allowed. Please close developer tools and reload page.");
+	}
+});
+	</script>
 		</script>
 		<title>
 			thetitanteam.com - Info about your school day
