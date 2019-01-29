@@ -186,6 +186,7 @@ function main() {
 		minutesleft = Math.floor(totalSecondsLeft / 60);
 		secondsleft = Math.floor(totalSecondsLeft % 60);
 		document.getElementById("current-period-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
+		document.title = "Left in period:" + hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
 	}
 }
 function time() {
