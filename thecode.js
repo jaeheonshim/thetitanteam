@@ -45,11 +45,16 @@ function main() {
 	}
 
 	function updateTimeElapsed(){
+		/* 
+		Information about time in seconds:
+		28200: 7:50 AM (The time when school starts)
+		54300: 3:05 PM (The time when school ends
+		*/
 		if((absoluteTime < 28200) || (absoluteTime > 54300)) {
 			document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
 		}
 		else{
-			var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 28199;
+			var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 28199; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
 			secondselapsed = totalSeconds;
 			hours = Math.floor(totalSeconds / 3600);
 			totalSeconds %= 3600;
@@ -74,6 +79,7 @@ function main() {
 	function getPeriod() {
 		console.log(secondselapsed);
 		if (secondselapsed < 3000) {
+			//period 1 is 5 minutes longer than the other periods to allow for the morning announcements.
 			document.getElementById("current-class").innerHTML = "Period 1";
 		}
 		if (secondselapsed > 3000 && secondselapsed < 3300) {
