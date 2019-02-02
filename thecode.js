@@ -9,6 +9,14 @@ function main() {
 	var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 	setInterval(updates, 1000);
 
+	function delay() {
+		var x = document.getElementById("twohour");
+		if (twohour == true) {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
 	function hoursToSeconds(x) {
 		return x * 3600;
 	}
@@ -93,19 +101,19 @@ function main() {
 	}
 }
 
-	function updateTimeLeft() {
-		if((absoluteTime < 28200) || (absoluteTime > 54300)) {
-			document.getElementById("time-left").innerHTML = "It is outside of school hours";
-		}
-		else {
-			var totalSecondsLeft = 26099 - secondselapsed;
-			hoursleft = Math.floor(totalSecondsLeft / 3600);
-			totalSecondsLeft %= 3600;
-			minutesleft = Math.floor(totalSecondsLeft / 60);
-			secondsleft = Math.floor(totalSecondsLeft % 60);
-			document.getElementById("time-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
-		}
+function updateTimeLeft() {
+	if((absoluteTime < 28200) || (absoluteTime > 54300)) {
+		document.getElementById("time-left").innerHTML = "It is outside of school hours";
 	}
+	else {
+		var totalSecondsLeft = 26099 - secondselapsed;
+		hoursleft = Math.floor(totalSecondsLeft / 3600);
+		totalSecondsLeft %= 3600;
+		minutesleft = Math.floor(totalSecondsLeft / 60);
+		secondsleft = Math.floor(totalSecondsLeft % 60);
+		document.getElementById("time-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
+	}
+}
 
 function getPeriod() {
 	/* 
@@ -245,7 +253,7 @@ function getPeriod() {
 
 function getTimeLeftInPeriod() {
 	if(twohour == false) {
-	if (secondselapsed < 3000) {
+		if (secondselapsed < 3000) {
 			return 3000 - secondselapsed; //Period 1
 		}
 		if (secondselapsed > 3000 && secondselapsed < 3300) {
@@ -352,20 +360,20 @@ function getTimeLeftInPeriod() {
 		}
 	}
 }
-	function setTimeLeftInPeriod() {
-		var totalSecondsLeft = getTimeLeftInPeriod();
-		console.log(totalSecondsLeft);
-		hoursleft = Math.floor(totalSecondsLeft / 3600);
-		totalSecondsLeft %= 3600;
-		minutesleft = Math.floor(totalSecondsLeft / 60);
-		secondsleft = Math.floor(totalSecondsLeft % 60);
-		document.getElementById("current-period-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
-		document.title = "Left in period:" + hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
-	}
-	function time() {
-		var date = new Date();
-		var split = String(date).split(" ");
-		var time = split[4];
-		return time;
-	}
+function setTimeLeftInPeriod() {
+	var totalSecondsLeft = getTimeLeftInPeriod();
+	console.log(totalSecondsLeft);
+	hoursleft = Math.floor(totalSecondsLeft / 3600);
+	totalSecondsLeft %= 3600;
+	minutesleft = Math.floor(totalSecondsLeft / 60);
+	secondsleft = Math.floor(totalSecondsLeft % 60);
+	document.getElementById("current-period-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
+	document.title = "Left in period:" + hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
+}
+function time() {
+	var date = new Date();
+	var split = String(date).split(" ");
+	var time = split[4];
+	return time;
+}
 }
