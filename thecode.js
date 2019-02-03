@@ -5,7 +5,7 @@ Javascript
 */
 function main() {
 	var day = 86400;
-	var twohour = true;
+	var twohour = false;
 	var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 	setInterval(updates, 1000);
 
