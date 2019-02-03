@@ -3,31 +3,11 @@ thetitanteam.com - Information about your school day
 By Jaeheon Shim
 Javascript
 */
+var day = 86400;
+var twohour = false;
+var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 function main() {
-	var day = 86400;
-	var twohour = false;
-	var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 	setInterval(updates, 1000);
-
-	function delay() {
-		var x = document.getElementById("twohour");
-		if (twohour == true) {
-			x.style.display = "block";
-		} else {
-			x.style.display = "none";
-		}
-	}
-	function hoursToSeconds(x) {
-		return x * 3600;
-	}
-
-	function minutesToSeconds(x) {
-		return x * 60;
-	}
-
-	function preferredTime() {
-		timeformat = document.getElementById("preferredtime").value;
-	}
 
 	function updates() {
 		preferredTime();
@@ -42,77 +22,9 @@ function main() {
 		seconds = parseInt(splittime[2]);
 		absoluteTime = hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds;
 	}
-
-	function minTwoDigits(n) {
-		return (n < 9 ? '0' : '') + n;
-	}
-
-	function updateMainTime() {
-		if(timeformat == "24") {
-			document.getElementById("current-time").innerHTML = time();
-		}
-		if(timeformat == "12") {
-			if(hours > 12) {
-				document.getElementById("current-time").innerHTML = (hours - 12) + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds) + " PM";
-			}
-			else {
-				document.getElementById("current-time").innerHTML = time() + " AM";
-			}
-		}
-	}
-
-	function updateTimeElapsed(){
-		/* 
-		Information about time in seconds:
-		28200: 7:50 AM (The time when school starts)
-		54300: 3:05 PM (The time when school ends)
-
-		------Two Hour Delay------
-		35400: 9:50 AM (School start time for two hour delay schedule)
-		School still ends at the same time
-		*/
-		if(twohour == true) { //if current schedule is on two hour delay
-			if((absoluteTime < 35400) || (absoluteTime > 54300)) {
-				document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
-			}
-			else {
-				var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 35399; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
-				secondselapsed = totalSeconds;
-				hours = Math.floor(totalSeconds / 3600);
-				totalSeconds %= 3600;
-				minutes = Math.floor(totalSeconds / 60);
-				seconds = Math.floor(totalSeconds % 60);
-				document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
-			}
-		}
-		else {
-			if((absoluteTime < 28200) || (absoluteTime > 54300)) {
-				document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
-			}
-			else {
-			var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 28199; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
-			secondselapsed = totalSeconds;
-			hours = Math.floor(totalSeconds / 3600);
-			totalSeconds %= 3600;
-			minutes = Math.floor(totalSeconds / 60);
-			seconds = Math.floor(totalSeconds % 60);
-			document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
-		}
-	}
 }
-
-function updateTimeLeft() {
-	if((absoluteTime < 28200) || (absoluteTime > 54300)) {
-		document.getElementById("time-left").innerHTML = "It is outside of school hours";
-	}
-	else {
-		var totalSecondsLeft = 26099 - secondselapsed;
-		hoursleft = Math.floor(totalSecondsLeft / 3600);
-		totalSecondsLeft %= 3600;
-		minutesleft = Math.floor(totalSecondsLeft / 60);
-		secondsleft = Math.floor(totalSecondsLeft % 60);
-		document.getElementById("time-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
-	}
+function minTwoDigits(n) {
+	return (n < 9 ? '0' : '') + n;
 }
 
 function getPeriod() {
@@ -376,4 +288,23 @@ function time() {
 	var time = split[4];
 	return time;
 }
+
+function delay() {
+	var x = document.getElementById("twohour");
+	if (twohour == true) {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+function hoursToSeconds(x) {
+	return x * 3600;
+}
+
+function minutesToSeconds(x) {
+	return x * 60;
+}
+
+function preferredTime() {
+	timeformat = document.getElementById("preferredtime").value;
 }
