@@ -60,49 +60,49 @@ function getPeriod() {
 			document.getElementById("current-class").innerHTML = "Period 1";
 		}
 		if (secondselapsed > 3000 && secondselapsed < 3300) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 2)";
 		}
 		if (secondselapsed > 3300 && secondselapsed < 6000) {
 			document.getElementById("current-class").innerHTML = "Period 2";
 		}
 		if (secondselapsed > 6000 && secondselapsed < 6300) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 3)";
 		}
 		if (secondselapsed > 6300 && secondselapsed < 9000) {
 			document.getElementById("current-class").innerHTML = "Period 3";
 		}
 		if (secondselapsed > 9000 && secondselapsed < 9300) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 4)";
 		}
 		if (secondselapsed > 9300 && secondselapsed < 12000) {
 			document.getElementById("current-class").innerHTML = "Period 4";
 		}
 		if (secondselapsed > 12000 && secondselapsed < 12300) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 5)";
 		}
 		if (secondselapsed > 12300 && secondselapsed < 14100) {
 			document.getElementById("current-class").innerHTML = "Period 5 (Lunch)";
 		}
 		if (secondselapsed > 14100 && secondselapsed < 14400) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 6)";
 		}
 		if (secondselapsed > 14400 && secondselapsed < 17100) {
 			document.getElementById("current-class").innerHTML = "Period 6";
 		}
 		if (secondselapsed > 17100 && secondselapsed < 17400) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 7)";
 		}
 		if (secondselapsed > 17400 && secondselapsed < 20100) {
 			document.getElementById("current-class").innerHTML = "Period 7";
 		}
 		if (secondselapsed > 20100 && secondselapsed < 20400) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 8)";
 		}
 		if (secondselapsed > 20400 && secondselapsed < 23100) {
 			document.getElementById("current-class").innerHTML = "Period 8 (Exploratory)";
 		}
 		if (secondselapsed > 23100 && secondselapsed < 23400) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 9)";
 		}
 		if (secondselapsed > 23400 && secondselapsed < 26100) {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
@@ -113,49 +113,49 @@ function getPeriod() {
 			document.getElementById("current-class").innerHTML = "Period 1";
 		}
 		if (secondselapsed > 2100 && secondselapsed < 2400) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 2)";
 		}
 		if (secondselapsed > 2400 && secondselapsed < 4200) {
 			document.getElementById("current-class").innerHTML = "Period 2";
 		}
 		if (secondselapsed > 4200 && secondselapsed < 4500) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 3)";
 		}
 		if (secondselapsed > 4500 && secondselapsed < 6300) {
 			document.getElementById("current-class").innerHTML = "Period 3";
 		}
 		if (secondselapsed > 6300 && secondselapsed < 6600) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 5)";
 		}
 		if (secondselapsed > 6600 && secondselapsed < 8400) {
 			document.getElementById("current-class").innerHTML = "Period 5 (Lunch)";
 		}
 		if (secondselapsed > 8400 && secondselapsed < 8700) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 6)";
 		}
 		if (secondselapsed > 8700 && secondselapsed < 10500) {
 			document.getElementById("current-class").innerHTML = "Period 6";
 		}
 		if (secondselapsed > 10500 && secondselapsed < 10800) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 7)";
 		}
 		if (secondselapsed > 10800 && secondselapsed < 12600) {
 			document.getElementById("current-class").innerHTML = "Period 7";
 		}
 		if (secondselapsed > 12600 && secondselapsed < 12900) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 4)";
 		}
 		if (secondselapsed > 12900 && secondselapsed < 14700) {
 			document.getElementById("current-class").innerHTML = "Period 4";
 		}
 		if (secondselapsed > 14700 && secondselapsed < 15000) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 8)";
 		}
 		if (secondselapsed > 15000 && secondselapsed < 16800) {
 			document.getElementById("current-class").innerHTML = "Period 8 (Exploratory)";
 		}
 		if (secondselapsed > 16800 && secondselapsed < 17100) {
-			document.getElementById("current-class").innerHTML = "Passing Period";
+			document.getElementById("current-class").innerHTML = "Passing Period (To Period 9)";
 		}
 		if (secondselapsed > 17100 && secondselapsed < 18900) {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
