@@ -8,6 +8,17 @@
 	height: 50px;
 }
 
+#valentines {
+	background-color: #FFC0CB;
+	border-radius: 10px;
+	font-size: 35px;
+	text-align: center;
+	font-family: arial;
+	padding-top: 5px;
+	height: 50px;
+}
+
+
 #schedule-box {
 	background-color: #4286f4;
 	border-radius: 10px;
