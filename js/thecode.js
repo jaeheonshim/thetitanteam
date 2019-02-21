@@ -8,7 +8,12 @@ var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 function main() {
 	setInterval(updates, 1000);
-
+	if(twohour == true) {
+		document.getElementById("message").innerHTML = "Two Hour Delay";
+	}
+	else {
+		document.getElementById("message").innerHTML = "Normal Schedule";
+	}
 	function updates() {
 		preferredTime();
 		updateMainTime();
