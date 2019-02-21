@@ -4,7 +4,7 @@ By Jaeheon Shim
 Javascript
 */
 var day = 86400;
-var twohour = false;
+var twohour = true;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 function main() {
 	setInterval(updates, 1000);
