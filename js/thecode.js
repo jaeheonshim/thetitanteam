@@ -4,15 +4,19 @@ By Jaeheon Shim
 Javascript
 */
 var day = 86400;
-var twohour = true;
+var twohour = neither; //idk what is happening today
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 function main() {
 	setInterval(updates, 1000);
 	if(twohour == true) {
 		document.getElementById("message").innerHTML = "Two Hour Delay";
 	}
-	else {
+	else if(twohour == false){
 		document.getElementById("message").innerHTML = "Normal Schedule";
+	}
+	else {
+		document.getElementById("message").innerHTML = "Schedule Error";
+		document.getElementById("message").style.border = "10px solid red";
 	}
 	function updates() {
 		preferredTime();
