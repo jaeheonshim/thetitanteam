@@ -117,7 +117,7 @@ function getPeriod() {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
 		}
 	}
-	else {
+	else if(twohour == true){
 		if (secondselapsed < 2100) {
 			document.getElementById("current-class").innerHTML = "Period 1";
 		}
@@ -169,6 +169,9 @@ function getPeriod() {
 		if (secondselapsed > 17100 && secondselapsed < 18900) {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
 		}
+	}
+	else {
+		document.getElementById("current-class").innerHTML = "Unrecognized Schedule";
 	}
 }
 
@@ -226,7 +229,7 @@ function getTimeLeftInPeriod() {
 			return 26100 - secondselapsed; //period 9
 		}
 	}
-	else{
+	else if(twohour == true){
 		//two hour delay
 		if (secondselapsed < 2100) {
 			return 2100 - secondselapsed;
