@@ -8,6 +8,7 @@ var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 function main() {
 	setInterval(updates, 1000);
+	setInterval(updateSubscribers, 2000);
 	if(twohour == true) {
 		document.getElementById("message").innerHTML = "Two Hour Delay";
 	}
@@ -319,4 +320,11 @@ function minutesToSeconds(x) {
 
 function preferredTime() {
 	timeformat = document.getElementById("preferredtime").value;
+}
+
+function days_passed(dt) {
+  var current = new Date(dt.getTime());
+  var previous = new Date(dt.getFullYear(), 0, 1);
+
+  return Math.ceil((current - previous + 1) / 86400000);
 }
