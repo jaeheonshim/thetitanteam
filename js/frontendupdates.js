@@ -25,7 +25,7 @@ function updateTimeElapsed(){
 		------Two Hour Delay------
 		35400: 9:50 AM (School start time for two hour delay schedule)
 		School still ends at the same time
-*/
+		*/
 	if(twohour == true) { //if current schedule is on two hour delay
 		if((absoluteTime < 35400) || (absoluteTime > 54300)) {
 			document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
@@ -79,4 +79,32 @@ function setTimeLeftInPeriod() {
 	secondsleft = Math.floor(totalSecondsLeft % 60);
 	document.getElementById("current-period-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
 	document.title = "Left in period:" + hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
+}
+
+function updateSubscribers() {
+	loadChannelPew("UC-lHJZR3Gqxm24_Vd_AJ5Yw");
+	loadChannelT("UCq-Fj5jknLsUf-MWSy4_brA");
+	difference = pewdiepie - tseries;
+	document.getElementById("subgap").innerHTML = (pewdiepie - tseries);
+}
+
+
+var chanName = "";
+var pewdiepie, tseries, difference
+function loadChannelPew(name) {
+	var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+name+'&key=AIzaSyB8jNJIocdReo7iT6H8muynGz49TYMKwm0'
+
+	$.getJSON(url, function(data) {
+		$('#odometer').html(data.items[0].statistics.subscriberCount);
+		$(pewdiepie = parseInt(data.items[0].statistics.subscriberCount));
+	});
+}
+
+function loadChannelT(name) {
+	var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+name+'&key=AIzaSyB8jNJIocdReo7iT6H8muynGz49TYMKwm0'
+
+	$.getJSON(url, function(data) {
+		$('#tseries').html(data.items[0].statistics.subscriberCount);
+		$(tseries = parseInt(data.items[0].statistics.subscriberCount));
+	});
 }
