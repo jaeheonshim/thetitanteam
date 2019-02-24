@@ -82,10 +82,12 @@ function setTimeLeftInPeriod() {
 }
 
 function updateSubscribers() {
+	if (document.hasFocus()) {
 	loadChannelPew("UC-lHJZR3Gqxm24_Vd_AJ5Yw");
 	loadChannelT("UCq-Fj5jknLsUf-MWSy4_brA");
 	difference = pewdiepie - tseries;
 	document.getElementById("subgap").innerHTML = (pewdiepie - tseries);
+	}
 }
 
 
