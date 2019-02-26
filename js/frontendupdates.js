@@ -1,6 +1,5 @@
 /*
 This file is part of www.thetitanteam.com
-
 This script is responsible for dealing with timely updates that happen in the front-end. In other words, it is responsible for what the user sees.
 */
 function updateMainTime() {
@@ -28,7 +27,7 @@ function updateTimeElapsed(){
 		*/
 	if(twohour == true) { //if current schedule is on two hour delay
 		if((absoluteTime < 35400) || (absoluteTime > 54300)) {
-			document.getElementById("time-elapsed").innerHTML = "School is not in session";
+			document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
 		}
 		else {
 			var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 35399; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
@@ -37,13 +36,12 @@ function updateTimeElapsed(){
 			totalSeconds %= 3600;
 			minutes = Math.floor(totalSeconds / 60);
 			seconds = Math.floor(totalSeconds % 60);
-			document.getElementById("time-elapsed").innerHTML = "Loading..."
-				document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
+			document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
 		}
 	}
 	else {
 		if((absoluteTime < 28200) || (absoluteTime > 54300)) {
-			document.getElementById("time-elapsed").innerHTML = "School is not in session";
+			document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
 		}
 		else {
 		var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 28199; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
@@ -52,15 +50,14 @@ function updateTimeElapsed(){
 		totalSeconds %= 3600;
 		minutes = Math.floor(totalSeconds / 60);
 		seconds = Math.floor(totalSeconds % 60);
-		document.getElementById("time-elapsed").innerHTML = "Loading..."
 		document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
 	}
 }
 }
-/*
+
 function updateTimeLeft() {
 	if((absoluteTime < 28200) || (absoluteTime > 54300)) {
-		document.getElementById("time-left").innerHTML = "";
+		document.getElementById("time-left").innerHTML = "It is outside of school hours";
 	}
 	else {
 		var totalSecondsLeft = 26099 - secondselapsed;
@@ -68,31 +65,19 @@ function updateTimeLeft() {
 		totalSecondsLeft %= 3600;
 		minutesleft = Math.floor(totalSecondsLeft / 60);
 		secondsleft = Math.floor(totalSecondsLeft % 60);
-		document.getElementById("time-left").innerHTML = "Loading..."
-		document.getElementById("time-left").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
+		document.getElementById("time-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
 	}
 }
-*/
-function setTimeLeftInPeriod() {
-	if((absoluteTime < 28200) || (absoluteTime > 54300)) {
-		document.getElementById("current-period-left").innerHTML = "";
-	}
-	else {	
-		var totalSecondsLeft = getTimeLeftInPeriod();
-		//console.log(totalSecondsLeft);
-		hoursleft = Math.floor(totalSecondsLeft / 3600);
-		totalSecondsLeft %= 3600;
-		minutesleft = Math.floor(totalSecondsLeft / 60);
-		secondsleft = Math.floor(totalSecondsLeft % 60);
-		if(isNaN(hoursleft)) {
-			document.getElementById("current-period-left").innerHTML = "Loading...";
-		}
-		else {
-		document.getElementById("current-period-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
-		document.title = "Left in period:" + hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
-	}
-	}
 
+function setTimeLeftInPeriod() {
+	var totalSecondsLeft = getTimeLeftInPeriod();
+	console.log(totalSecondsLeft);
+	hoursleft = Math.floor(totalSecondsLeft / 3600);
+	totalSecondsLeft %= 3600;
+	minutesleft = Math.floor(totalSecondsLeft / 60);
+	secondsleft = Math.floor(totalSecondsLeft % 60);
+	document.getElementById("current-period-left").innerHTML = hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
+	document.title = "Left in period:" + hoursleft + ":" + minTwoDigits(minutesleft) + ":" + minTwoDigits(secondsleft);
 }
 
 function updateSubscribers() {
@@ -123,16 +108,4 @@ function loadChannelT(name) {
 		$('#tseries').html(data.items[0].statistics.subscriberCount);
 		$(tseries = parseInt(data.items[0].statistics.subscriberCount));
 	});
-}
-
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("sidebarnav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("sidebarnav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
 }
