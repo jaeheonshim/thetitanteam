@@ -8,37 +8,22 @@
 	<script src="js/frontendupdates.js"></script>
 	<script src="https://unpkg.com/jdetects@0.1.0/jdetects.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<title>
-		thetitanteam.com - Info about your school day
-	</title>
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
-	<link rel="stylesheet" type="text/css" href="style.css">
+<title>
+	thetitanteam.com - Info about your school day
+</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body onload="main();">
-	<div class="sidenav" id="sidebarnav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<h1>
-			Useful Links
-		</h1>
-  <a href="https://bartholomew.itslearning.com/index.aspx" target="_blank">itsLearning</a>
-  <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">Google Drive</a>
-  <a href="https://www.hmhco.com/api/external-sso/access?sp=ed&connection=bcsc-k12-in-us" target="_blank">HMH Techbook</a>
-  <a href="https://sso.cpm.org/" target="_blank">CPM Sign In</a>
-  <hr>
-  <h1>
-  	Jaeheon Shim
-  </h1>
-  <a href="https://www.hmhco.com/api/external-sso/access?sp=ed&connection=bcsc-k12-in-us" target="_blank">GitHub</a>
-  <a href="https://www.hmhco.com/api/external-sso/access?sp=ed&connection=bcsc-k12-in-us" target="_blank">Learn The Technology</a>
-</div>
-<div class="main" id="main">
+	<div class="ribbon ribbon-top-left"><span>Stable 1.1</span></div>
 	<div id="heading-box">
 		thetitanteam.com - Information about your school day
 	</div>
-	<hr>
+	<br>
+
 	<div id="schedule-box">
 		Titan Team Live Schedule
 		<br>
@@ -51,27 +36,27 @@
 		<div class="schedule-box-text">
 			Current Time:
 			<div id="current-time" style="display: inline">
-				Loading...
+				00:00
 			</div>
 			<br>
 			Time elapsed in school day:
 			<div id="time-elapsed" style="display: inline">
-				Loading...
+				00:00
 			</div>
 			<br>
 			Time left in school day:
 			<div id="time-left" style="display: inline">
-				Loading...
+				00:00
 			</div>
 			<br>
 			Current Class Period:
 			<div id="current-class" style="display: inline">
-				Loading...
+				current-class
 			</div>
 			<br>
 			Time left in current class period:
 			<div id="current-period-left" style="display: inline">
-				Loading...
+				current-period-left
 			</div>
 			<br>
 			<div id="message" align="middle" style="border: 10px solid green; width: 50%; margin: auto">
@@ -79,30 +64,31 @@
 			
 		</div>
 	</div>
-	<button class="openbtn" onclick="openNav()" align="middle">&#9776; Toggle Sidebar</button> 
+	<br>
 	<div id="subs">
 		PewDiePie vs T-Series Live Subscriber Count
 		<br>
 		<div class="schedule-box-text">
-			<span style="position:relative; top:1px;">
-				PewDiePie: 
-			</span>
-			<div id="odometer" class="odometer">
-
-			</div>
-			<br>
-			<span>
-				T-Series: 
-			</span>
-			<div id="tseries" class="odometer">
-			</div>
-			<br> <br>
-			Subscriber difference:
-			<div id="subgap" class="odometer">
-			</div>
+		<span style="position:relative; top:1px;">
+		PewDiePie: 
+	</span>
+		<div id="odometer" class="odometer">
+			
 		</div>
+		<br>
+		<span>
+			T-Series: 
+		</span>
+		<div id="tseries" class="odometer">
+		</div>
+		<br> <br>
+		Subscriber difference:
+		<div id="subgap" class="odometer">
+</div>
+	</div>
 	</div>
 	
+	<br>
 
 	<div id="homeworkbox">
 		Homework
@@ -110,6 +96,5 @@
 		<iframe align="middle" width="1000px" height="1000px" src="https://docs.google.com/spreadsheets/d/1Xxg0isRc6948VrM1wrHTCAcp1563iJeicWiBbRNT46k/pub?embedded=true"></iframe>
 	</div>
 	Developed by Jae<a href="https://github.com/jaeheonshim/" style="text-decoration: none; font-color: black">h</a>eon Shim with Javascript. For questions, comments, or concerns, email jaeheonshim@learnthetechnology.com.
-</div>
 </body>
 </html>
