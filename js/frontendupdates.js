@@ -79,7 +79,7 @@ function setTimeLeftInPeriod() {
 	}
 	else {	
 		var totalSecondsLeft = getTimeLeftInPeriod();
-		console.log(totalSecondsLeft);
+		//console.log(totalSecondsLeft);
 		hoursleft = Math.floor(totalSecondsLeft / 3600);
 		totalSecondsLeft %= 3600;
 		minutesleft = Math.floor(totalSecondsLeft / 60);
