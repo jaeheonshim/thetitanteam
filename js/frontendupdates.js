@@ -57,7 +57,7 @@ function updateTimeElapsed(){
 	}
 }
 }
-
+/*
 function updateTimeLeft() {
 	if((absoluteTime < 28200) || (absoluteTime > 54300)) {
 		document.getElementById("time-left").innerHTML = "";
@@ -72,7 +72,7 @@ function updateTimeLeft() {
 		document.getElementById("time-left").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
 	}
 }
-
+*/
 function setTimeLeftInPeriod() {
 	if((absoluteTime < 28200) || (absoluteTime > 54300)) {
 		document.getElementById("current-period-left").innerHTML = "";
