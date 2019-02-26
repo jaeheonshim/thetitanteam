@@ -68,12 +68,8 @@ function updateTimeLeft() {
 		totalSecondsLeft %= 3600;
 		minutesleft = Math.floor(totalSecondsLeft / 60);
 		secondsleft = Math.floor(totalSecondsLeft % 60);
-		if(isNaN(hoursleft)){
-			document.getElementById("time-left").innerHTML = "Loading..."
-		}
-		else {
-			document.getElementById("time-left").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
-		}
+		document.getElementById("time-left").innerHTML = "Loading..."
+		document.getElementById("time-left").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
 	}
 }
 
