@@ -117,9 +117,6 @@ function getPeriod() {
 		if (secondselapsed > 23400 && secondselapsed < 26100) {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
 		}
-		else {
-			document.getElementById("current-class").innerHTML = "";
-		}
 	}
 	else if(twohour == true){
 		if (secondselapsed < 2100) {
@@ -172,9 +169,6 @@ function getPeriod() {
 		}
 		if (secondselapsed > 17100 && secondselapsed < 18900) {
 			document.getElementById("current-class").innerHTML = "Period 9 (Exploratory)";
-		}
-		else {
-			document.getElementById("current-class").innerHTML = "";
 		}
 	}
 	else {
