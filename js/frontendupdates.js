@@ -37,12 +37,8 @@ function updateTimeElapsed(){
 			totalSeconds %= 3600;
 			minutes = Math.floor(totalSeconds / 60);
 			seconds = Math.floor(totalSeconds % 60);
-			if(isNaN(hours)){
-				document.getElementById("time-elapsed").innerHTML = "Loading..."
-			}
-			else {
+			document.getElementById("time-elapsed").innerHTML = "Loading..."
 				document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
-			}
 		}
 	}
 	else {
@@ -56,12 +52,8 @@ function updateTimeElapsed(){
 		totalSeconds %= 3600;
 		minutes = Math.floor(totalSeconds / 60);
 		seconds = Math.floor(totalSeconds % 60);
-		if(isNaN(hours)){
-			document.getElementById("time-elapsed").innerHTML = "Loading..."
-		}
-		else {
-			document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
-		}
+		document.getElementById("time-elapsed").innerHTML = "Loading..."
+		document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
 	}
 }
 }
