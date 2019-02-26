@@ -63,7 +63,7 @@ function getPeriod() {
 	Period 8: 2:00 PM - 2:30 PM
 	Period 9: 2:35 PM - 3:05 PM
 	*/
-	console.log(secondselapsed);
+	//console.log(secondselapsed);
 	if(twohour == false) {
 		if (secondselapsed < 3000) {
 			//period 1 is 5 minutes longer than the other periods to allow for the morning announcements.
