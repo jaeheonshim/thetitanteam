@@ -34,7 +34,7 @@ function main() {
 	}
 }
 function minTwoDigits(n) {
-	return (n < 9 ? '0' : '') + n;
+	return (n < 10 ? '0' : '') + n;
 }
 
 function getPeriod() {

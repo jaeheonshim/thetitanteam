@@ -69,7 +69,10 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #f0f0f0;
+	background-image: url(header.jpg);
+	background-size: cover;
+	background-position: center;
+
 }
 
 .box {
@@ -351,6 +354,23 @@ body {
   color: #818181;
   display: block;
 }
+
+.sidenav h2 {
+  padding: 0px 0px 0px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav h3 {
+  padding-left:16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
 
 .sidenav a:hover {
   color: #f1f1f1;
