@@ -118,11 +118,3 @@ function closeNav() {
 	document.getElementById("sidebarnav").style.width = "0"; 
 	document.getElementById("main").style.marginLeft = "0";
 }
-
-function openNavs() {
-  document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNavs() {
-  document.getElementById("myNav").style.width = "0%";
-}
