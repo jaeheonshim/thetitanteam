@@ -27,7 +27,7 @@ function main() {
 	}
 
 	if(getCookie("homework") == "show") {
-		subs.checked = true;
+		homework.checked = true;
 	}
 
 	setInterval(updates, 1000);
