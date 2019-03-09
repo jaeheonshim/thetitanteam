@@ -6,7 +6,30 @@ Javascript
 var day = 86400;
 var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
+var timebox, subs, homework, timer, subscriberbox, homeworkbox
 function main() {
+		//checkboxes
+	 timebox = document.getElementById("ti");
+	 subs = document.getElementById("sb");
+	 homework = document.getElementById("hw");
+
+	//divs
+	 timer = document.getElementById("schedule-box");
+	 subscriberbox = document.getElementById("subs");
+	 homeworkbox = document.getElementById("homeworkbox");
+
+	if(getCookie("timer") == "show") {
+		timebox.checked = true;
+	}
+
+	if(getCookie("subs") == "show") {
+		subs.checked = true;
+	}
+
+	if(getCookie("homework") == "show") {
+		subs.checked = true;
+	}
+
 	setInterval(updates, 1000);
 	setInterval(updateSubscribers, 2000);
 	if(twohour == true) {
@@ -19,12 +42,15 @@ function main() {
 		document.getElementById("message").innerHTML = "Schedule Error";
 		document.getElementById("message").style.border = "10px solid red";
 	}
+
+
 	function updates() {
 		preferredTime();
 		updateMainTime();
 		updateTimeLeft();
 		updateTimeElapsed();
 		getPeriod();
+		customize();
 		setTimeLeftInPeriod();
 		splittime = time().split(":");
 		hours = parseInt(splittime[0]);
@@ -327,4 +353,20 @@ function days_passed(dt) {
   var previous = new Date(dt.getFullYear(), 0, 1);
 
   return Math.ceil((current - previous + 1) / 86400000);
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }

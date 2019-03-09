@@ -82,10 +82,10 @@ function setTimeLeftInPeriod() {
 
 function updateSubscribers() {
 	if (document.hasFocus()) {
-	loadChannelPew("UC-lHJZR3Gqxm24_Vd_AJ5Yw");
-	loadChannelT("UCq-Fj5jknLsUf-MWSy4_brA");
-	difference = pewdiepie - tseries;
-	document.getElementById("subgap").innerHTML = (pewdiepie - tseries);
+		loadChannelPew("UC-lHJZR3Gqxm24_Vd_AJ5Yw");
+		loadChannelT("UCq-Fj5jknLsUf-MWSy4_brA");
+		difference = pewdiepie - tseries;
+		document.getElementById("subgap").innerHTML = (pewdiepie - tseries);
 	}
 }
 
@@ -120,9 +120,38 @@ function closeNav() {
 }
 
 function openNavs() {
-  document.getElementById("myNav").style.width = "100%";
+	document.getElementById("myNav").style.width = "100%";
 }
 
 function closeNavs() {
-  document.getElementById("myNav").style.width = "0%";
+	document.getElementById("myNav").style.width = "0%";
+}
+
+function customize() {
+	if(timebox.checked){
+		timer.style.display = "block";
+		document.cookie = "timer=show";
+	}
+	else if (timebox.checked == false){
+		timer.style.display = "none";
+		document.cookie = "timer=hide";
+	}
+	//==========================
+	if(subs.checked){
+		subscriberbox.style.display = "block";
+		document.cookie = "subs=show";
+	}
+	else if (subs.checked == false){
+		subscriberbox.style.display = "none";
+		document.cookie = "subs=hide";
+	}
+	//==========================
+	if(homework.checked){
+		homeworkbox.style.display = "block";
+		document.cookie = "homework=show";
+	}
+	else if (homework.checked == false){
+		homeworkbox.style.display = "none";
+		document.cookie = "homework=hide";
+	}
 }
