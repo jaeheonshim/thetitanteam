@@ -45,12 +45,12 @@ function main() {
 
 
 	function updates() {
+		customize();
 		preferredTime();
 		updateMainTime();
 		updateTimeLeft();
 		updateTimeElapsed();
 		getPeriod();
-		customize();
 		setTimeLeftInPeriod();
 		splittime = time().split(":");
 		hours = parseInt(splittime[0]);

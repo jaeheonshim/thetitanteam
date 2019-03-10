@@ -130,28 +130,28 @@ function closeNavs() {
 function customize() {
 	if(timebox.checked){
 		timer.style.display = "block";
-		document.cookie = "timer=show";
+		document.cookie = "timer=show;expires=Thu, 18 Dec 2290 12:00:00 UTC";
 	}
 	else if (timebox.checked == false){
 		timer.style.display = "none";
-		document.cookie = "timer=hide";
+		document.cookie = "timer=hide;expires=Thu, 18 Dec 2290 12:00:00 UTC";
 	}
 	//==========================
 	if(subs.checked){
 		subscriberbox.style.display = "block";
-		document.cookie = "subs=show";
+		document.cookie = "subs=show;expires=Thu, 18 Dec 2290 12:00:00 UTC";
 	}
 	else if (subs.checked == false){
 		subscriberbox.style.display = "none";
-		document.cookie = "subs=hide";
+		document.cookie = "subs=hide;expires=Thu, 18 Dec 2290 12:00:00 UTC";
 	}
 	//==========================
 	if(homework.checked){
 		homeworkbox.style.display = "block";
-		document.cookie = "homework=show";
+		document.cookie = "homework=show;expires=Thu, 18 Dec 2290 12:00:00 UTC";
 	}
 	else if (homework.checked == false){
 		homeworkbox.style.display = "none";
-		document.cookie = "homework=hide";
+		document.cookie = "homework=hide;expires=Thu, 18 Dec 2290 12:00:00 UTC";
 	}
 }
