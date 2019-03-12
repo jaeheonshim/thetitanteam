@@ -8,15 +8,38 @@ var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 var timebox, subs, homework, timer, subscriberbox, homeworkbox
 function main() {
+	var modal = document.getElementById('myModal');
+	var span = document.getElementsByClassName("close")[0];
+	var btn = document.getElementById("myBtn");
+	var ltt = document.getElementById("learnthetechnologyart");
+
+	modal.style.display = "block";
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+
+	span.onclick = function() {
+  modal.style.display = "none";
+}
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+ltt.onclick = function() {
+	window.open("https://learnthetechnology.com/celebrating-the-30th-anniversary-of-the-world-wide-web/");
+}
 		//checkboxes
-	 timebox = document.getElementById("ti");
-	 subs = document.getElementById("sb");
-	 homework = document.getElementById("hw");
+		timebox = document.getElementById("ti");
+		subs = document.getElementById("sb");
+		homework = document.getElementById("hw");
 
 	//divs
-	 timer = document.getElementById("schedule-box");
-	 subscriberbox = document.getElementById("subs");
-	 homeworkbox = document.getElementById("homeworkbox");
+	timer = document.getElementById("schedule-box");
+	subscriberbox = document.getElementById("subs");
+	homeworkbox = document.getElementById("homeworkbox");
 
 	if(getCookie("timer") == "show") {
 		timebox.checked = true;
@@ -349,24 +372,24 @@ function preferredTime() {
 }
 
 function days_passed(dt) {
-  var current = new Date(dt.getTime());
-  var previous = new Date(dt.getFullYear(), 0, 1);
+	var current = new Date(dt.getTime());
+	var previous = new Date(dt.getFullYear(), 0, 1);
 
-  return Math.ceil((current - previous + 1) / 86400000);
+	return Math.ceil((current - previous + 1) / 86400000);
 }
 
 function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
 }
