@@ -8,25 +8,6 @@ var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 var timebox, subs, homework, timer, subscriberbox, homeworkbox
 function main() {
-	var modal = document.getElementById('myModal');
-	var span = document.getElementsByClassName("close")[0];
-	var btn = document.getElementById("myBtn");
-	var ltt = document.getElementById("learnthetechnologyart");
-
-	modal.style.display = "block";
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
-
-	span.onclick = function() {
-  modal.style.display = "none";
-}
-
-ltt.onclick = function() {
-	window.open("https://learnthetechnology.com/celebrating-the-30th-anniversary-of-the-world-wide-web/");
-}
 		//checkboxes
 		timebox = document.getElementById("ti");
 		subs = document.getElementById("sb");
