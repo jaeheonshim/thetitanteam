@@ -24,10 +24,6 @@ function main() {
   modal.style.display = "none";
 }
 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
 ltt.onclick = function() {
 	window.open("https://learnthetechnology.com/celebrating-the-30th-anniversary-of-the-world-wide-web/");
 }
