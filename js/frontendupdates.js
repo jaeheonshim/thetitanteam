@@ -16,6 +16,17 @@ function updateMainTime() {
 	}
 }
 
+function schoolEndsIn(){
+	var Today = new Date();
+	var seconds = SecDiff(Today)
+	var days = Math.floor(seconds / (3600*24));
+	seconds  -= days*3600*24;
+	var hrs   = Math.floor(seconds / 3600);
+	seconds  -= hrs*3600;
+	var mnts = Math.floor(seconds / 60);
+	seconds  -= mnts*60;
+	document.getElementById("school-time-left").innerHTML = days+" days, "+minTwoDigits(hrs)+":"+minTwoDigits(mnts)+":"+minTwoDigits(seconds);
+}
 function updateTimeElapsed(){
 /* 
 		Information about time in seconds:

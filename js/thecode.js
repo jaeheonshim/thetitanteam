@@ -3,6 +3,18 @@ thetitanteam.com - Information about your school day
 By Jaeheon Shim
 Javascript
 */
+
+function SecDiff(CurrentDate)
+{
+	var TYear=CurrentDate.getFullYear();
+        var TDay=new Date("May, 30, 2019");
+        TDay.getFullYear(TYear);
+        var DayCount=(TDay-CurrentDate)/(1000);
+        DayCount=Math.round(DayCount); 
+    return(DayCount);
+}
+
+
 var day = 86400;
 var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
@@ -46,6 +58,7 @@ function main() {
 
 	function updates() {
 		customize();
+		schoolEndsIn();
 		preferredTime();
 		updateMainTime();
 		updateTimeLeft();
