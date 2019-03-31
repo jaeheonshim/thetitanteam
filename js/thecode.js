@@ -57,7 +57,7 @@ function main() {
 
 
 	function updates() {
-		customize();
+		//customize();
 		schoolEndsIn();
 		preferredTime();
 		updateMainTime();
