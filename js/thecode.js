@@ -42,7 +42,7 @@ function main() {
 	if(getCookie("homework") == "show") {
 		homework.checked = true;
 	}
-
+*/
 	setInterval(updates, 1000);
 	setInterval(updateSubscribers, 2000);
 	if(twohour == true) {
@@ -56,7 +56,6 @@ function main() {
 		document.getElementById("message").style.border = "10px solid red";
 	}
 
-*/
 	function updates() {
 		//customize();
 		schoolEndsIn();
