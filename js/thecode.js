@@ -20,6 +20,7 @@ var twohour = false;
 var splittime, hours, minutes, seconds, hourselapsed, minuteselapsed, secondselapsed, absoluteTime, timeformat;
 var timebox, subs, homework, timer, subscriberbox, homeworkbox
 function main() {
+	/*
 		//checkboxes
 		timebox = document.getElementById("ti");
 		subs = document.getElementById("sb");
@@ -55,7 +56,7 @@ function main() {
 		document.getElementById("message").style.border = "10px solid red";
 	}
 
-
+*/
 	function updates() {
 		//customize();
 		schoolEndsIn();
