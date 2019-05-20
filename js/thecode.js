@@ -7,7 +7,7 @@ Javascript
 function SecDiff(CurrentDate)
 {
 	var TYear=CurrentDate.getFullYear();
-        var TDay=new Date("2019-05-30T15:05:00-05:00");
+        var TDay=new Date("2019-05-30T15:05:00-04:00");
         TDay.getFullYear(TYear);
         var DayCount=(TDay-CurrentDate)/(1000);
         DayCount=Math.round(DayCount); 
