@@ -1,0 +1,287 @@
+<html>
+
+<head>
+	<note: school day is 7 hours 15 minutes>
+		<script src="thecode.js">
+	<script src="https://unpkg.com/jdetects@0.1.0/jdetects.js"></script>
+	<script>
+		jdetects.create({
+	once: false,
+	label: "jaeheonshim",
+	onchange: function(status) {
+		if(status == "on") {
+			document.write("Developer tools is not allowed. Please close developer tools and reload page.");
+	}
+});
+	</script>
+		</script>
+		<title>
+			thetitanteam.com - Info about your school day
+		</title>
+		<style>
+			#heading-box {
+				background-color: #00cc00;
+				border-radius: 10px;
+				font-size: 35px;
+				text-align: center;
+				font-family: arial;
+				padding-top: 5px;
+				height: 50px;
+			}
+
+			#schedule-box {
+				background-color: #4286f4;
+				border-radius: 10px;
+				font-size: 30px;
+				text-align: center;
+				font-family: arial;
+				padding-top: 5px;
+				height: 280px;
+			}
+
+			.schedule-box-text {
+				font-size: 30px;
+				text-align: left;
+				padding-left: 20px;
+				padding-top: 10px;
+			}
+
+			#homeworkbox {
+				background-color: #4286f4;
+				border-radius: 10px;
+				font-size: 70px;
+				text-align: center;
+				font-family: arial;
+				padding-top: 5px;
+				height: 1100px;
+			}
+
+			@import url(https://fonts.googleapis.com/css?family=Lato:700);
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				background: #f0f0f0;
+			}
+
+			.box {
+				position: relative;
+				max-width: 600px;
+				width: 90%;
+				height: 400px;
+				background: #fff;
+				box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+			}
+
+			/* common */
+			.ribbon {
+				width: 150px;
+				height: 150px;
+				overflow: hidden;
+				position: absolute;
+			}
+
+			.ribbon::before,
+			.ribbon::after {
+				position: absolute;
+				z-index: -1;
+				content: '';
+				display: block;
+				border: 5px solid #2980b9;
+			}
+
+			.ribbon span {
+				position: absolute;
+				display: block;
+				width: 225px;
+				padding: 15px 0;
+				background-color: #3498db;
+				box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+				color: #fff;
+				font: 700 18px/1 'Lato', sans-serif;
+				text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+				text-transform: uppercase;
+				text-align: center;
+			}
+
+			/* top left*/
+			.ribbon-top-left {
+				top: -10px;
+				left: -10px;
+			}
+
+			.ribbon-top-left::before,
+			.ribbon-top-left::after {
+				border-top-color: transparent;
+				border-left-color: transparent;
+			}
+
+			.ribbon-top-left::before {
+				top: 0;
+				right: 0;
+			}
+
+			.ribbon-top-left::after {
+				bottom: 0;
+				left: 0;
+			}
+
+			.ribbon-top-left span {
+				right: -25px;
+				top: 30px;
+				transform: rotate(-45deg);
+			}
+
+			/* top right*/
+			.ribbon-top-right {
+				top: -10px;
+				right: -10px;
+			}
+
+			.ribbon-top-right::before,
+			.ribbon-top-right::after {
+				border-top-color: transparent;
+				border-right-color: transparent;
+			}
+
+			.ribbon-top-right::before {
+				top: 0;
+				left: 0;
+			}
+
+			.ribbon-top-right::after {
+				bottom: 0;
+				right: 0;
+			}
+
+			.ribbon-top-right span {
+				left: -25px;
+				top: 30px;
+				transform: rotate(45deg);
+			}
+
+			/* bottom left*/
+			.ribbon-bottom-left {
+				bottom: -10px;
+				left: -10px;
+			}
+
+			.ribbon-bottom-left::before,
+			.ribbon-bottom-left::after {
+				border-bottom-color: transparent;
+				border-left-color: transparent;
+			}
+
+			.ribbon-bottom-left::before {
+				bottom: 0;
+				right: 0;
+			}
+
+			.ribbon-bottom-left::after {
+				top: 0;
+				left: 0;
+			}
+
+			.ribbon-bottom-left span {
+				right: -25px;
+				bottom: 30px;
+				transform: rotate(225deg);
+			}
+
+			/* bottom right*/
+			.ribbon-bottom-right {
+				bottom: -10px;
+				right: -10px;
+			}
+
+			.ribbon-bottom-right::before,
+			.ribbon-bottom-right::after {
+				border-bottom-color: transparent;
+				border-right-color: transparent;
+			}
+
+			.ribbon-bottom-right::before {
+				bottom: 0;
+				left: 0;
+			}
+
+			.ribbon-bottom-right::after {
+				top: 0;
+				right: 0;
+			}
+
+			.ribbon-bottom-right span {
+				left: -25px;
+				bottom: 30px;
+				transform: rotate(-225deg);
+			}
+
+      #source {
+        font-size: 20px;
+      }
+
+      #advertisement{
+        background-color: #00cc00;
+				border-radius: 10px;
+				font-size: 15px;
+				text-align: center;
+				font-family: arial;
+				padding-top: 10px;
+				height: 115px;
+      }
+		</style>
+</head>
+
+<body onload="main();">
+	<div class="ribbon ribbon-top-left"><span>STABLE</span></div>
+	<div id="heading-box">
+		thetitanteam.com - Information about your school day
+	</div>
+  </div>
+	<br>
+	<div id="schedule-box">
+		Titan Team Live Schedule
+		<br>
+		Preferred time format: 
+		<select id="preferredtime">
+			<option value="12">12 hour</option>
+			<option value="24">24 hour</option>
+		</select>
+		<div class="schedule-box-text">
+			Current Time:
+			<div id="current-time" style="display: inline">
+				00:00
+			</div>
+			<br>
+			Time elapsed in school day:
+			<div id="time-elapsed" style="display: inline">
+				00:00
+			</div>
+			<br>
+			Time left in school day:
+			<div id="time-left" style="display: inline">
+				00:00
+			</div>
+			<br>
+			Current Class Period:
+			<div id="current-class" style="display: inline">
+				current-class
+			</div>
+			<br>
+			Time left in current class period:
+			<div id="current-period-left" style="display: inline">
+				current-period-left
+			</div>
+		</div>
+    <a id="source" href="https://github.com/jaeheonshim/The-Titan-Team">View source code/Contribute to this project</a>
+	</div>
+	<br>
+  <div id="homeworkbox">
+    Homework
+    <br>
+    <iframe align="middle" width="1000px" height="1000px" src="https://docs.google.com/spreadsheets/d/1Xxg0isRc6948VrM1wrHTCAcp1563iJeicWiBbRNT46k/pub?embedded=true"></iframe>
+  </div>
+	Developed by Jaeheon Shim with Javascript and Ramen Noodles. For questions, comments, or concerns, email jaeheonshim@learnthetechnology.com.
+</body>
+</html>
