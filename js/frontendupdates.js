@@ -28,14 +28,14 @@ function schoolEndsIn(){
 	document.getElementById("school-time-left").innerHTML = days+" days, "+minTwoDigits(hrs)+":"+minTwoDigits(mnts)+":"+minTwoDigits(seconds);
 }
 function updateTimeElapsed(){
-/* 
-		Information about time in seconds:
-		28200: 7:50 AM (The time when school starts)
-		54300: 3:05 PM (The time when school ends)
-		------Two Hour Delay------
-		35400: 9:50 AM (School start time for two hour delay schedule)
-		School still ends at the same time
-		*/
+	/* 
+	Information about time in seconds:
+	28200: 7:50 AM (The time when school starts)
+	54300: 3:05 PM (The time when school ends)
+	------Two Hour Delay------
+	35400: 9:50 AM (School start time for two hour delay schedule)
+	School still ends at the same time
+	*/
 	if(twohour == true) { //if current schedule is on two hour delay
 		if((absoluteTime < 35400) || (absoluteTime > 54300)) {
 			document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
@@ -55,15 +55,15 @@ function updateTimeElapsed(){
 			document.getElementById("time-elapsed").innerHTML = "It is outside of school hours";
 		}
 		else {
-		var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 28199; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
-		secondselapsed = totalSeconds;
-		hours = Math.floor(totalSeconds / 3600);
-		totalSeconds %= 3600;
-		minutes = Math.floor(totalSeconds / 60);
-		seconds = Math.floor(totalSeconds % 60);
-		document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
+			var totalSeconds = (hoursToSeconds(hours) + minutesToSeconds(minutes) + seconds) - 28199; //The total amount of time in seconds that has passed MINUS the 7 hours 50 minutes you were not at school.
+			secondselapsed = totalSeconds;
+			hours = Math.floor(totalSeconds / 3600);
+			totalSeconds %= 3600;
+			minutes = Math.floor(totalSeconds / 60);
+			seconds = Math.floor(totalSeconds % 60);
+			document.getElementById("time-elapsed").innerHTML = hours + ":" + minTwoDigits(minutes) + ":" + minTwoDigits(seconds);
+		}
 	}
-}
 }
 
 function updateTimeLeft() {
@@ -105,7 +105,7 @@ var chanName = "";
 var pewdiepie, tseries, difference
 function loadChannelPew(name) {
 	var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+name+'&key=AIzaSyB8jNJIocdReo7iT6H8muynGz49TYMKwm0'
-
+	
 	$.getJSON(url, function(data) {
 		$('#odometer').html(data.items[0].statistics.subscriberCount);
 		$(pewdiepie = parseInt(data.items[0].statistics.subscriberCount));
@@ -114,7 +114,7 @@ function loadChannelPew(name) {
 
 function loadChannelT(name) {
 	var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+name+'&key=AIzaSyB8jNJIocdReo7iT6H8muynGz49TYMKwm0'
-
+	
 	$.getJSON(url, function(data) {
 		$('#tseries').html(data.items[0].statistics.subscriberCount);
 		$(tseries = parseInt(data.items[0].statistics.subscriberCount));
@@ -122,8 +122,12 @@ function loadChannelT(name) {
 }
 
 function openNav() { 
-	document.getElementById("sidebarnav").style.width = "250px"; 
-	document.getElementById("main").style.marginLeft = "250px"; 
+	if(document.getElementById("sidebarnav").style.width == "250px") {
+		closeNav();
+	} else {
+		document.getElementById("sidebarnav").style.width = "250px"; 
+		document.getElementById("main").style.marginLeft = "250px"; 
+	}
 } 
 function closeNav() { 
 	document.getElementById("sidebarnav").style.width = "0"; 
